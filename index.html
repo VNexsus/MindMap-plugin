@@ -1,0 +1,90 @@
+<!--
+ (c) VNexsus 2021-2022
+
+ Licensed under the GNU GPL v2
+ Terms of license: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+ 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MindMap Editor</title>
+
+	<!-- bower:css -->
+	<link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+	<link rel="stylesheet" href="vendor/hotbox/hotbox.css" />
+	<link rel="stylesheet" href="vendor/kityminder-core/dist/kityminder.core.css" />
+	<link rel="stylesheet" href="vendor/color-picker/dist/color-picker.min.css" />
+	<!-- endbower -->
+
+	<link rel="stylesheet" href="kityminder.editor.css">
+	<link rel="stylesheet" href="../v1/plugins.css">
+
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+		div.minder-editor-container {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		.km-view{
+			font-family: Arial, sans-serif!important;
+		}
+	</style>
+</head>
+<body ng-app="kityminderPane" ng-controller="MainController">
+	<kityminder-editor on-init="initEditor(editor, minder)"></kityminder-editor>
+</body>
+
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="vendor/codemirror/lib/codemirror.js"></script>
+<script src="vendor/codemirror/mode/xml/xml.js"></script>
+<script src="vendor/codemirror/mode/javascript/javascript.js"></script>
+<script src="vendor/codemirror/mode/css/css.js"></script>
+<script src="vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="vendor/codemirror/mode/markdown/markdown.js"></script>
+<script src="vendor/codemirror/addon/mode/overlay.js"></script>
+<script src="vendor/codemirror/mode/gfm/gfm.js"></script>
+<script src="vendor/angular-ui-codemirror/ui-codemirror.min.js"></script>
+<script src="vendor/marked/lib/marked.js"></script>
+<script src="vendor/kity/dist/kity.min.js"></script>
+<script src="vendor/hotbox/hotbox.min.js"></script>
+<script src="vendor/json-diff/json-diff.js"></script>
+<script src="vendor/kityminder-core/dist/kityminder.core.min.js"></script>
+<script src="vendor/color-picker/dist/color-picker.min.js"></script>
+
+<script src="../v1/plugins.js"></script>
+
+<script src="kityminder.editor.js"></script>
+
+<script>
+	angular.module('kityminderPane', ['kityminderEditor'])
+		.config(function (configProvider) {
+			//
+		})
+		.controller('MainController', function($scope) {
+			$scope.initEditor = function(editor, minder) {
+				window.editor = editor;
+				window.minder = minder;
+				initData(minder,editor);
+				
+			};
+		});
+	function initData(minder,editor){
+	}
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+{
+    "name" : "MindMap",
+    "guid" : "asc.{9D8BBFCA-83C5-2130-E727-BA93EC116401}",
+
+    "variations" : [
+        {
+            "description" : "MindMap",
+            "url"         : "index.html",
+
+            "icons"           : ["resources/img/icon@2x.png", "resources/img/icon@2x.png"],
+            "isViewer"        : true,
+            "EditorsSupport"  : ["word", "cell", "slide"],
+
+            "isVisual"        : true,
+            "isModal"         : true,
+            "isInsideMode"    : false,
+
+            "initDataType"    : "ole",
+            "initData"        : "",
+
+            "isUpdateOleOnResize": false,
+
+            "buttons"        : [
+                {
+                    "text": "Insert Text",
+                    "primary": true,
+                    "textLocale": {
+                        "ru": "Вставить",
+                        "fr": "Insérer",
+                        "es": "Insertar",
+                        "de": "Einfügen"
+                    }
+                },
+                {
+                    "text": "Cancel",
+                    "primary": false,
+                    "textLocale": {
+                        "ru": "Отмена",
+                        "fr": "Annuler",
+                        "es": "Cancelar",
+                        "de": "Abbrechen"
+                    }
+                }
+			],
+			
+			"size": [ 1200, 1000 ]
+			
+        }
+    ]
+}
